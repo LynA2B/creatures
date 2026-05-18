@@ -84,5 +84,12 @@ function clearAll()
         clear background color to white
         
     */
-    alert("clearAll()");
+
+    let creatures = document.querySelectorAll(".creature");
+
+    creatures.forEach(function(el) {
+        el.style.backgroundColor = "#fff" //white
+        el.style.border = "2px solid black"; //reset border
+    });
+    //alert("clearAll()");
 }//end clearAll()
