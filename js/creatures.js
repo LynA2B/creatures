@@ -23,15 +23,15 @@ function showHome()
         //switch based on home
         switch(home) {
             case "land":
-                el.computedStyleMap.backgroundColor = "green";
+                el.style.backgroundColor = "green";
             break;
 
             case "water":
-                el.computedStyleMap.backgroundColor = "blue";
+                el.style.backgroundColor = "blue";
             break;
 
             case "air":
-                el.computedStyleMap.backgroundColor = "yellow";
+                el.style.backgroundColor = "yellow";
             break;
 
             default:
@@ -50,7 +50,29 @@ function showType()
         if creature is an animal, border color solid red
         if creature is an insect, border color is dashed orange
     */
-    alert("showType()");
+
+    let creatures = document.querySelectorAll(".creature");
+
+    creatures.forEach(function(el) {
+
+        //read data-creature-type attribute
+        let type = el.dataset.creatureType;
+
+        switch(type) {
+
+            case "animal":
+                el.style.border = "3px solid red";
+            break;
+
+             case "insect":
+                el.style.border = "3px dashed orange";
+            break;
+
+            default:
+                console.log("Unknown type:", type);
+        }
+    });
+    // alert("showType()");
 }//end showType()
 
 function clearAll()
